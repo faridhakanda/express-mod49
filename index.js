@@ -1,7 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const app = express()
-const port = 8000
+const port = process.env.PORT || 8000
 
 app.use(cors())
 app.use(express.json())
@@ -37,7 +37,9 @@ app.post('/user', (req, res) => {
 })
 
 
-
+app.get('/contact', (req, res) => {
+    res.send('Contact Page for Express.js');
+})
 
 app.listen(port, () => {
     console.log(`Express app listening on port ${port}`)
